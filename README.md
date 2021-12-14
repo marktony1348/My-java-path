@@ -1,1 +1,1 @@
-# My-java-path
+# My-javascript-path
