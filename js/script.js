@@ -8,6 +8,10 @@ let pokemonList = [
 
 // creating for loop (variable initialization: let i=0), (conditional: i < pokemonList.lenght ),(action: i = i+1 or i++)
 for (let i = 0; i < pokemonList.length; i++) {
-    console.log(pokemonList[i]);
+    document.write('<br>' + pokemonList[i].name + (' , height: ') + pokemonList[i].height);
+    
+    // for display on the console log
+    console.log(pokemonList[i].name + (' , height: ') + pokemonList[i].height);
+    
 }
    
