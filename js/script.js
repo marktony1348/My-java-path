@@ -1,13 +1,13 @@
-// a list of pokemons with different property variables
-let pokemonList = [{name:'charizard', height: 1.7, weight: 90.5, type: ['fire', 'flying']}, 
-    {name:'butterfree', height: 1.1, weight: 32,  type: ['bug', 'flying']},
-    {name:'weedle', height: 0.3, weight: 3.2,  type: ['bug', 'poison']},
-    {name:'pidgey', height: 0.3, weight: 1.8,  type: ['flying', 'normal']},
-    {name:'spearow', height: 0.3, weight: 2,  type: ['flying', 'normal']},
-    {name:'nidoqueen', height: 1.3, weight: 60,  type: ['ground', 'poison']},
-    {name:'nidoking', height: 1.4, weight: 62,  type: ['ground', 'poison']},
-    {name:'wigglytuff', height: 1, weight: 12,  type: ['fairy', 'normal']},
-    {name:'golbat', height: 1.6, weight: 55,  type: ['poison', 'flying']},
-    {name:'oddish', height: 0.5, weight: 5.4,  type: ['grass', 'poison']},
+//  a list of pokemons with different property variables (for easy accessibility reduced from 10 to 3)
 
-]
+let pokemonList = [
+    {name:'charizard', height: 1.7,  type: ['fire', 'flying']}, 
+    {name:'wingull', height: 0.6,   type: ['fairy', 'normal']}, 
+    {name:'venusaur', height: 2,   type: ['grass', 'poison']}
+];
+
+// creating for loop (variable initialization: let i=0), (conditional: i < pokemonList.lenght ),(action: i = i+1 or i++)
+for (let i = 0; i < pokemonList.length; i++) {
+    console.log(pokemonList[i]);
+}
+   
