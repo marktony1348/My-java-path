@@ -12,7 +12,10 @@
     <div class="container">
         <!-- top section header with the links -->
         <header>
-            <img src="images/pokemon.svg" height="100" width="100" alt="a logo of pokemon">
+            <div class="logo">
+                <img src="images/pokemon.svg" height="100" width="100" alt="a logo of pokemon">
+              </div>
+           
             
             <nav class="main-navigation page-header__item">
             <ul role="menubar" class="navigation-list">
@@ -47,12 +50,16 @@
 
         <!-- footer -->
         <footer>
-        <p>Click the links above to see other pokemon</p>
+            <p>Click the links above to see other pokemon</p>
+
+            <!-- the javscript link file was placed in the footer so as to also 
+            inherit the properties of the (.container class ) above -->
+            <script src="js/script.js"></script>
 
         </footer>
 
     </div>
       
-      <script src="js/script.js"></script>
+      
   </body>
 </html>

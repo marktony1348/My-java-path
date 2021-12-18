@@ -15,9 +15,7 @@
     --fontweight-h1: 700;
     --linehight: 1.6;
     --font-family: 'Roboto Mono', monospace;
-    --button-text-color: #ffffff;
-    --button-background-color: #2b2b2b;
-    --project-grid-background-color: #d3d3d3;
+    
 }
 
 /* styling as regards body and container */
@@ -28,6 +26,12 @@ body {
    font-weight: var(--fontweight-body);   
    font-size: var(--fontsize-body);
    line-height: var(--linehight);
+   background-image: 
+    url(../images/mega-blastoise-seeklogo.com.svg),
+    url(../images/pokeball-pokemon.svg);
+   background-attachment: fixed;
+   /* background-repeat: no-repeat; */
+   background-size: 60vh 60vh;
    /* border: 1px solid black; */
 
 }   
@@ -35,8 +39,18 @@ body {
 .container {
     max-width: 700px;
     margin: 0 auto;
+    border: 0px;
+    background-color: #e9e4e3;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+  
 }
-
+ .logo {
+    position: relative;
+    right: 35%; 
+    
+ }
 /* styling for various headings */
 h1 {
     font-size: var(--fontsize-h1);
@@ -100,7 +114,7 @@ a:active {
 
 .navigation-list li {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 5px;
 
 }
 
