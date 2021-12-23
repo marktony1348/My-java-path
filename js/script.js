@@ -6,29 +6,11 @@ let pokemonList = [
     {name:'venusaur', height: 2,   type: ['grass', 'poison']}
 ];
 
-// creating for loop (variable initialization: let i=0), (conditional: i < pokemonList.lenght ),(action: i = i+1 or i++)
-for (let i = 0; i < pokemonList.length; i++) {
-    // html tags that are placed in the javascript strings as represented 
-    // in all the conditional statements below
 
-    document.write('<p style= "color: blue;"> <br>' + pokemonList[i].name + ('  (height: ') + pokemonList[i].height + ')</p>');
-    
-    // for display on the console log
-    console.log(pokemonList[i].name + (' , height: ') + pokemonList[i].height);
+// for each loop
+pokemonList.forEach(function(pokemon) {
+  console.log('name: ' + pokemon.name + ', ' + 'height: ' + pokemon.height + ',' + ' type: ' + pokemon.type);
 
-    // creating the if-else conditional statements for the height classification
-    if (pokemonList[i].height >= 2) {
-
-        
-        document.write('<i> - Wow, that\'s big</i>');
-    } 
-    // this area shows the median height of the 3 pokemons in the list
-    else if (pokemonList[i].height > 1 || pokemonList[i] < 2 ) {
-        document.write('<i> This is a medium-sized pokemon</i>');
-    }
-    else {
-        document.write('<i> This is a small pokemon </i>');
-    }
-    
-}
+ });
+     
   

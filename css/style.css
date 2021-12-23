@@ -26,13 +26,7 @@ body {
    font-weight: var(--fontweight-body);   
    font-size: var(--fontsize-body);
    line-height: var(--linehight);
-   background-image: 
-    url(../images/mega-blastoise-seeklogo.com.svg),
-    url(../images/pokeball-pokemon.svg);
-   background-attachment: fixed;
-   /* background-repeat: no-repeat; */
-   background-size: 60vh 60vh;
-   /* border: 1px solid black; */
+   
 
 }   
 
