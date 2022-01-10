@@ -2,7 +2,7 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-container');
+  let modal = document.querySelector('#pokedex');
 
   // public function creation (getAll and add)
   function add(pokemon) {
@@ -22,16 +22,27 @@ let pokemonRepository = (function () {
   // addlist function created
   function addListItem(pokemon) {
     let pokemonList = document.querySelector(".pokemon-list");
+
     let listpokemon = document.createElement("li");
+
     let button = document.createElement("button");
+
+    let pokemonImg = document.createElement("img");
+
+
     button.innerText = pokemon.name;
-    button.classList.add("button-class");
+    button.classList.add("button");
+    button.classList.add("btn");
+   
+
+    
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
+    button.appendChild(pokemonImg);
 
     // event listener
     button.addEventListener("click", function(event) {
-      showDetails(pokemon);
+      showDetails(pokemon, modal);
     });
   }
 
@@ -71,69 +82,6 @@ let pokemonRepository = (function () {
     });
   }
 
-  // modal creation
-  function showModal(pokemon) {
-    modalContainer.innerHTML = '';
-    let modal = document.createElement('div');
-    modal.classList.add('modal');
-
-    let closeButtonElement = document.createElement('button');
-    closeButtonElement.classList.add('modal-close');
-    closeButtonElement.innerText = 'Close';
-    closeButtonElement.addEventListener('click', hideModal);
-
-    let titleElement = document.createElement('h1');
-    titleElement.innerText = pokemon.name;
-
-    let contentElement = document.createElement('p');
-    contentElement.innerText = 'Height: ' + pokemon.height;
-
-    let weightElement = document.createElement('p');
-    weightElement.innerText = 'Weight: ' + pokemon.weight;
-
-
-
-    let imageElement = document.createElement('img')
-    imageElement.src = pokemon.imageUrl;
-
-    modal.appendChild(closeButtonElement);
-    modal.appendChild(titleElement);
-    modal.appendChild(contentElement);
-    modal.appendChild(weightElement);
-    modal.appendChild(imageElement);
-
-    modalContainer.appendChild(modal);
-
-
-    modalContainer.classList.add('is-visible');
-  }
-
-
-  // implementation of the modal closing using button , esc, overlay
-  function hideModal() {
-    modalContainer.classList.remove('is-visible');
-  }
-  //  esc method
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();  
-    }
-  });
-  // overlay
-  modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-      hideModal();
-    }
-  });
-
-  document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal('Modal title', 'This is the modal content!');
-  });
-
-  
-
-  // creating function showDetails
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       showModal(pokemon);
@@ -141,6 +89,41 @@ let pokemonRepository = (function () {
 
   }
 
+
+  // modal creation(using bootsrap) with name, image height and weight element
+  function showModal(pokemon){
+      let modalBody = $('.modal-body');
+      let modalTitle = $('.modal-title');
+  
+      modalTitle.empty();
+      modalBody.empty();
+  
+      let nameElement = $('<h1 class="text-capitalize">' + pokemon.name + '</h1>');
+      let imageElement = $('<img class="modal-img" style="width:30%">');
+      imageElement.attr("src", pokemon.imageUrl);
+  
+      let heightElement = $('<p>' + 'Height : ' + pokemon.height + '</p>');
+      let weightElement = $('<p>' + 'Weight : ' + pokemon.weight + '</p>');
+      
+  
+      modalTitle.append(nameElement);
+      modalBody.append(imageElement);
+      modalBody.append(heightElement);
+      modalBody.append(weightElement);
+  
+      $('#pokedex').modal();
+  }
+
+  fetch("https://pokeapi.co/api/v2/pokemon/")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (pokemonList) {
+    console.log(pokemonList);
+  })
+  .catch(function () {});
+  
+  
   //Explanation: This IIFE will ultimately return the object below, with key-value pairs associated with the functions above.
   return {
     add: add,
