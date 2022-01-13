@@ -11,7 +11,7 @@
 **Overview**:
 - This pokedex is a quick reference for facts and images of all your favorite pokemon. Click any pokemon name button to see other details.
 - The Pokemon data is drawn from the external api, https://pokeapi.co/. This app was built using the standardised coding practices ranging from AJAX etc. 
-<img src="C:\Users\Admin\OneDrive\Desktop\careerfoundry tasks\appscreenshot.pdf">
+<img src="C:/Users/Admin/OneDrive/Desktop/careerfoundry tasks/appscreenshot.pdf">
 
 **Built with**:
 - HTML5
