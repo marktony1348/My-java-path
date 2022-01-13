@@ -2,10 +2,10 @@
 # Pokemon (pokedex)
 
 ## Table of Contents
-> overview
-> project dependecies
-> Usage
-> Contact
+[Overview]
+[Tools]
+[Usage]
+[Contact]
 
 **Overview**:
 - This pokedex is a quick reference for facts and images of all your favorite pokemon. Click any pokemon name button to see other details.
@@ -13,7 +13,7 @@
 <img src="images/appscreenshot-1.png">
 
 
-**Built with**:
+**Tools**:
 - HTML5
 - SCSS,
 - JavaScript ES6 languages
