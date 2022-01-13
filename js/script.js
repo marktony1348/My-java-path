@@ -113,7 +113,7 @@ let pokemonRepository = (function () {
   
       $('#pokedex').modal();
   }
-
+6
   fetch("https://pokeapi.co/api/v2/pokemon/")
   .then(function (response) {
     return response.json();
